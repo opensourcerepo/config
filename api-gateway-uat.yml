@@ -1,3 +1,5 @@
+server :
+  port : 8765
 spring:
   cloud:
     gateway:
@@ -10,5 +12,3 @@ spring:
           uri: lb://ADMIN-SERVICE
           predicates:
             - Path=/admin/**
-server : 
-  port : 8081
