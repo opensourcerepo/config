@@ -10,3 +10,5 @@ spring:
           uri: lb://ADMIN-SERVICE
           predicates:
             - Path=/admin/**
+server : 
+  port : 8081
