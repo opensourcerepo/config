@@ -1,5 +1,10 @@
 server :
   port : 8081
+spring:
+  application:
+    name: ADMIN-SERVICE
+  profiles:
+    active: dev  
 eureka:
   client:
     register-with-eureka: true
