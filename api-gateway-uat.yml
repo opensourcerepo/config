@@ -8,7 +8,7 @@ spring:
           uri: lb://USER-SERVICE
           predicates:
             - Path=/user/**
-        - id: admin-service
+        - id: ADMIN-SERVICE
           uri: lb://ADMIN-SERVICE
           predicates:
             - Path=/admin/**
