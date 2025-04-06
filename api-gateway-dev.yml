@@ -1,5 +1,9 @@
-server :
-  port : 8765
+server:
+  port: 8765
+logging:
+  level:
+    org.springframework.cloud.gateway: DEBUG
+
 spring:
   cloud:
     gateway:
@@ -8,7 +12,7 @@ spring:
           uri: lb://USER-SERVICE
           predicates:
             - Path=/user/**
-        - id: USER-SERVICE
+        - id: ADMIN-SERVICE
           uri: lb://ADMIN-SERVICE
           predicates:
             - Path=/admin/**
