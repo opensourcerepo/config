@@ -12,9 +12,11 @@ spring:
           uri: lb://USER-SERVICE
           predicates:
             - Path=/user/**
-        - id: ADMIN-SERVICE
-          uri: lb://ADMIN-SERVICE
           filters:
             - StripPrefix=1
+        - id: ADMIN-SERVICE
+          uri: lb://ADMIN-SERVICE
           predicates:
             - Path=/admin/**
+          filters:
+            - StripPrefix=1  
