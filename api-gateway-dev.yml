@@ -14,5 +14,7 @@ spring:
             - Path=/user/**
         - id: ADMIN-SERVICE
           uri: lb://ADMIN-SERVICE
+          filters:
+            - StripPrefix=1
           predicates:
             - Path=/admin/**
