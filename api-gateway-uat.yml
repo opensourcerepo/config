@@ -1,5 +1,8 @@
-server :
-  port : 8765
+server:
+  port: 8765
+logging:
+  level:
+    org.springframework.cloud.gateway: INFO
 spring:
   cloud:
     gateway:
@@ -16,3 +19,20 @@ spring:
             - Path=/admin/**
           filters:
             - StripPrefix=1
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics,gateway,env,beans,threaddump,httptrace,refresh
+  endpoint:
+    health:
+      show-details: always
+  health:
+    diskspace:
+      enabled: true
+    db:
+      enabled: true
