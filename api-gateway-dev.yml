@@ -20,3 +20,10 @@ spring:
             - Path=/admin/**
           filters:
             - StripPrefix=1  
+management:
+  endpoint:
+    gateway:
+      enabled: true
+    web:
+      exposure:
+        include: "*"
