@@ -19,11 +19,11 @@ spring:
           predicates:
             - Path=/admin/**
           filters:
-            - StripPrefix=1
-      discovery:
-        locator:
-          enabled: true
-          lower-case-service-id: true
+#            - StripPrefix=1
+#      discovery:
+#        locator:
+#          enabled: true
+#          lower-case-service-id: true
 management:
   endpoints:
     web:
