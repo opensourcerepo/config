@@ -19,11 +19,12 @@ spring:
           predicates:
             - Path=/admin/**
           filters:
-            - StripPrefix=1  
+            - StripPrefix=1
 management:
-  endpoint:
-    gateway:
-      enabled: true
+  endpoints:
     web:
       exposure:
         include: "*"
+  endpoint:
+    gateway:
+      enabled: true
