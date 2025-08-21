@@ -16,6 +16,12 @@ spring:
             - Path=/admin/**
           filters:
             - StripPrefix=1
+        - id: common-service
+          uri: lb://COMMON-SERVICE
+          predicates:
+              - Path=/common/**
+          filters:
+              - StripPrefix=1
 management:
   endpoints:
     web:

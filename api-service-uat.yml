@@ -4,16 +4,22 @@ spring:
   cloud:
     gateway:
       routes:
-        - id: USER-SERVICE
+        - id: user-service
           uri: lb://USER-SERVICE
           predicates:
             - Path=/user/**
           filters:
             - StripPrefix=1
-        - id: ADMIN-SERVICE
+        - id: admin-service
           uri: lb://ADMIN-SERVICE
           predicates:
             - Path=/admin/**
+          filters:
+            - StripPrefix=1
+        - id: common-service
+          uri: lb://COMMON-SERVICE
+          predicates:
+            - Path=/common/**
           filters:
             - StripPrefix=1
 management:
