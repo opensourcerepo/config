@@ -2,7 +2,7 @@ spring:
   application:
     name: COMMON-SERVICE
 server :
-  port : 8083
+  port : 8089
 eureka:
   client:
     register-with-eureka: true
@@ -12,7 +12,7 @@ eureka:
   instance:
     hostname: localhost
   datasource:
-    url: jdbc:mysql://localhost:3306/medilab_DB
+    url: jdbc:mysql://localhost:3306/common_service
     username: root
     password: admin
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -21,19 +21,3 @@ eureka:
     hibernate:
       ddl-auto: update
     show-sql: true
-
-  mail:
-    host: smtp.gmail.com
-    port: 587
-    username: adityasinghraj0405@gmail.com
-    password: cvnpfnumxbajrcsc
-    properties:
-      mail:
-        smtp:
-          auth: true
-          starttls:
-            enable: true
-
-doctor:
-  timeslot:
-    default-buffer-time: 10

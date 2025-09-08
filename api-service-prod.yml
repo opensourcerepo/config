@@ -19,7 +19,7 @@ spring:
         - id: common-service
           uri: lb://COMMON-SERVICE
           predicates:
-              - Path=/common/**
+              - Path=/common-service/**
           filters:
               - StripPrefix=1
 management:
