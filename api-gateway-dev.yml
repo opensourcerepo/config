@@ -19,6 +19,9 @@ spring:
           predicates:
             - Path=/admin/**
           filters:
+  main:
+    web-application-type: reactive
+
 #            - StripPrefix=1
 #      discovery:
 #        locator:
