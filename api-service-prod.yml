@@ -3,25 +3,24 @@ server :
 spring:
   cloud:
     gateway:
-      routes:
-        - id: user-service
+        - id: USER-SERVICE
           uri: lb://USER-SERVICE
           predicates:
-            - Path=/api/user-service/**
+            - Path=/user/**
           filters:
-            - RewritePath=/api/user-service/(?<segment>.*), /${segment}
-        - id: admin-service
+            - StripPrefix=1
+        - id: ADMIN-SERVICE
           uri: lb://ADMIN-SERVICE
           predicates:
-            - Path=/api/admin-service/**
+            - Path=/admin/**
           filters:
-            - RewritePath=/api/admin-service/(?<segment>.*), /${segment}
+            - StripPrefix=1
         - id: common-service
           uri: lb://COMMON-SERVICE
           predicates:
-            - Path=/api/common-service/**
+            - Path=/common/**
           filters:
-            - RewritePath=/api/common-service/(?<segment>.*), /${segment}
+            - StripPrefix=1   
 management:
   endpoints:
     web:
