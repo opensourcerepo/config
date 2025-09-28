@@ -7,21 +7,21 @@ spring:
         - id: user-service
           uri: lb://USER-SERVICE
           predicates:
-            - Path=/user/**
+            - Path=/api/user-service/**
           filters:
-            - StripPrefix=1
+            - RewritePath=/api/user-service/(?<segment>.*), /${segment}
         - id: admin-service
           uri: lb://ADMIN-SERVICE
           predicates:
-            - Path=/admin/**
+            - Path=/api/admin-service/**
           filters:
-            - StripPrefix=1
+            - RewritePath=/api/admin-service/(?<segment>.*), /${segment}
         - id: common-service
           uri: lb://COMMON-SERVICE
           predicates:
-            - Path=/common/**
+            - Path=/api/common-service/**
           filters:
-            - StripPrefix=1
+            - RewritePath=/api/common-service/(?<segment>.*), /${segment}
 management:
   endpoints:
     web:
