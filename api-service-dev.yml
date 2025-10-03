@@ -21,7 +21,13 @@ spring:
           predicates:
             - Path=/common/**
           filters:
-            - StripPrefix=1   
+            - StripPrefix=1
+        - id: USER-SERVICE
+          uri: lb://HR-OPERATIONS-SERVICE
+          predicates:
+            - Path=/hrops/**
+          filters:
+            - StripPrefix=1
 management:
   endpoints:
     web:
