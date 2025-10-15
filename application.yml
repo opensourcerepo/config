@@ -17,3 +17,7 @@ microservice:
     endpoints:
       endpoint:
         uri: http://HR-OPERATIONS-SERVICE/**
+  payroll-service:
+    endpoints:
+      endpoint:
+        uri: http://PAYROLL-SERVICE/**
