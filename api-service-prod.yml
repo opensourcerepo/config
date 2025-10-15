@@ -16,8 +16,8 @@ spring:
             - Path=/hrops/**
           filters:
             - StripPrefix=1
-        - id: payroll-service
-          uri: lb://payroll-SERVICE
+        - id: PAYROLL-SERVICE
+          uri: lb://PAYROLL-SERVICE
           predicates:
             - Path=/payroll/**
           filters:
