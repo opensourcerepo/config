@@ -22,6 +22,12 @@ spring:
             - Path=/payroll/**
           filters:
             - StripPrefix=1
+        - id: ADMIN-SERVICE
+          uri: lb://ADMIN-SERVICE
+          predicates:
+            - Path=/admin/**
+          filters:
+            - StripPrefix=1
 management:
   endpoints:
     web:

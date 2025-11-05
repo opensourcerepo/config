@@ -21,3 +21,7 @@ microservice:
     endpoints:
       endpoint:
         uri: http://PAYROLL-SERVICE/**
+  admin-service:
+    endpoints:
+      endpoint:
+        uri: http://ADMIN-SERVICE/**
