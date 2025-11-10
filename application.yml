@@ -25,3 +25,7 @@ microservice:
     endpoints:
       endpoint:
         uri: http://ADMIN-SERVICE/**
+  notification-service:
+    endpoints:
+      endpoint:
+        uri: http://NOTIFICATION-SERVICE/**
