@@ -31,3 +31,6 @@ spring:
           starttls:
             enable: true
 
+app:
+  firebase-configuration-file: learn-push-notification-fdcec-firebase-adminsdk-fbsvc-b8b2145dd1.json
+
