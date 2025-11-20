@@ -30,3 +30,9 @@ spring:
           auth: true
           starttls:
             enable: true
+sftp:
+  host: 192.168.0.54
+  port: 22
+  username: hrmfiles
+  password: Vinit7568
+  baseDir: /files
