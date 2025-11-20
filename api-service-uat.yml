@@ -1,0 +1,38 @@
+server :
+  port : 8765
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: COMMON-SERVICE
+          uri: lb://COMMON-SERVICE
+          predicates:
+            - Path=/common/**
+          filters:
+            - StripPrefix=1
+        - id: HR-OPERATIONS-SERVICE
+          uri: lb://HR-OPERATIONS-SERVICE
+          predicates:
+            - Path=/hrops/**
+          filters:
+            - StripPrefix=1
+        - id: PAYROLL-SERVICE
+          uri: lb://PAYROLL-SERVICE
+          predicates:
+            - Path=/payroll/**
+          filters:
+            - StripPrefix=1
+        - id: ADMIN-SERVICE
+          uri: lb://ADMIN-SERVICE
+          predicates:
+            - Path=/admin/**
+          filters:
+            - StripPrefix=1
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    gateway:
+      enabled: true
